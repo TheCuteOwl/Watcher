@@ -4,12 +4,16 @@ from colorama import Fore, Back, Style
 init()
 import argparse
 
+# Création de l'analyseur d'arguments
 parser = argparse.ArgumentParser()
 
+# Ajout d'un argument nommé "username" à l'analyseur
 parser.add_argument("username", help="Le pseudo Minecraft à vérifier")
 
+# Analyse des arguments
 args = parser.parse_args()
 
+# Récupération de la valeur de l'argument "username"
 username = args.username
 
 if username is None:
@@ -50,6 +54,10 @@ def is_minecraft_username_available(username):
     return True
   else:
     return False
+
+
+
+
 
 def check_instagram(username):
     url = f"https://www.instagram.com/{username}/"
@@ -162,19 +170,6 @@ def spotify(username):
     if response.status_code == 200:
         return False
     return True
-
-def dropbox(username):
-    url = f"https://www.dropbox.com/home/{username}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return False
-    return True
-
-if dropbox(username):
-  print(Fore.GREEN + f'[+] Dropbox | {username} | is available.')
-else:
-  print(Fore.RED + f'[-] Dropbox | {username} | is not available | https://www.dropbox.com/home/{username}')
-
 
 if spotify(username):
   print(Fore.GREEN + f'[+] Spotify | {username} | is available.')
