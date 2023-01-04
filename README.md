@@ -41,4 +41,17 @@ IT WILL BE UPDATED AT LEAST 1 TIME A DAY
 * Want to support me ? Leave a star ⭐ 
 * You want to contribute or you find a issues feel free to check <br/>[issues page](https://github.com/TheCuteOwl/NO-Deobfuscator/issues)
 
-* Have Fun 
+* ACTUAL WEBSITE : 
+DeviantArt
+Etsy
+Soundcloud
+Xvid
+Dailymotion
+Itch.io
+AminoApp
+Patreon
+Vimeo
+Flickr
+Minecraft
+Github
+Speedrun.com
