@@ -3,6 +3,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 
+IT WILL BE UPDATED AT LEAST 1 TIME A DAY
 ---
 * Here is a way to find if a username is avaible ;)
 
