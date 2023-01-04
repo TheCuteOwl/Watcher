@@ -4,16 +4,12 @@ from colorama import Fore, Back, Style
 init()
 import argparse
 
-# Création de l'analyseur d'arguments
 parser = argparse.ArgumentParser()
 
-# Ajout d'un argument nommé "username" à l'analyseur
 parser.add_argument("username", help="Le pseudo Minecraft à vérifier")
 
-# Analyse des arguments
 args = parser.parse_args()
 
-# Récupération de la valeur de l'argument "username"
 username = args.username
 
 if username is None:
