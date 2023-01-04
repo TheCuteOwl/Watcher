@@ -129,12 +129,60 @@ def dailymotion(username):
         return False
     return True
 
+def xvid(username):
+    url = f"https://www.xvideos.com/channels/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def soundcloud(username):
+    url = f"https://soundcloud.com/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def etsy(username):
+    url = f"https://www.etsy.com/fr/shop/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def deviantart(username):
+    url = f"https://www.deviantart.com/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+if deviantart(username):
+  print(Fore.GREEN + '[+] DeviantArt | Username is available.')
+else:
+  print(Fore.RED + f'[-] DeviantArt | Username is not available | https://www.deviantart.com/{username}')
+
+
+if etsy(username):
+  print(Fore.GREEN + '[+] Etsy | Username is available.')
+else:
+  print(Fore.RED + f'[-] Etsy | Username is not available | https://www.etsy.com/fr/shop/{username}')
+
+
+if soundcloud(username):
+  print(Fore.GREEN + '[+] Soundcloud | Username is available.')
+else:
+  print(Fore.RED + f'[-] Soundcloud | Username is not available | https://soundcloud.com/{username}')
+
+if xvid(username):
+  print(Fore.GREEN + '[+] xvideos | Username is available.')
+else:
+  print(Fore.RED + f'[-] xvideos | Username is not available | https://www.xvideos.com/channels/{username}')
 
 if dailymotion(username):
   print(Fore.GREEN + '[+] Dailymotion | Username is available.')
 else:
   print(Fore.RED + f'[-] Dailymotion | Username is not available | https://www.dailymotion.com/{username}')
-
 
 if Itchio(username):
   print(Fore.GREEN + '[+] Itch.io | Username is available.')
@@ -154,16 +202,15 @@ else:
 vimeo = check_vimeo_username(username)
 
 if vimeo:
-  print(Fore.GREEN + f"[+] Vimeo | '{username}' is available.")
+  print(Fore.GREEN + f"[+] Vimeo | {username} is available.")
 else:
-  print(Fore.RED + f"[-] Vimeo | '{username}' is not available. | https://vimeo.com/{username}")
+  print(Fore.RED + f"[-] Vimeo | {username} is not available. | https://vimeo.com/{username}")
 
 
 if flickr(username):
   print(Fore.GREEN + f"[+] Flickr | {username} is avaible.")
 else:
   print(Fore.RED + f"[-] flickr | {username} is not avaible. | https://www.flickr.com/photos/{username}")
-
 
 if is_minecraft_username_available(username):
   print(Fore.GREEN + f"[+] Minecraft | {username} is avaible.")
