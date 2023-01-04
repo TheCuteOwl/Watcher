@@ -58,3 +58,7 @@ Speedrun.com
 Spotify
 Dropbox
 Behance
+Slack
+Gog
+Scratch
+Snapchat
