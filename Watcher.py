@@ -157,75 +157,114 @@ def deviantart(username):
         return False
     return True
 
-if deviantart(username):
-  print(Fore.GREEN + '[+] DeviantArt | Username is available.')
+def behance(username):
+    url = f"https://www.behance.net/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def spotify(username):
+    url = f"https://open.spotify.com/user/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def dropbox(username):
+    url = f"https://www.dropbox.com/home/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+if dropbox(username):
+  print(Fore.GREEN + f'[+] Dropbox | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] DeviantArt | Username is not available | https://www.deviantart.com/{username}')
+  print(Fore.RED + f'[-] Dropbox | {username} | is not available | https://www.dropbox.com/home/{username}')
+
+
+if spotify(username):
+  print(Fore.GREEN + f'[+] Spotify | {username} | is available.')
+else:
+  print(Fore.RED + f'[-] Spotify | {username} | is not available | https://open.spotify.com/user/{username}')
+
+
+if behance(username):
+  print(Fore.GREEN + f'[+] Behance | {username} | is available.')
+else:
+  print(Fore.RED + f'[-] Behance | {username} | is not available | https://www.behance.net/{username}')
+
+
+if deviantart(username):
+  print(Fore.GREEN + f'[+] DeviantArt | {username} | is available.')
+else:
+  print(Fore.RED + f'[-] DeviantArt | {username} | is not available | https://www.deviantart.com/{username}')
 
 
 if etsy(username):
-  print(Fore.GREEN + '[+] Etsy | Username is available.')
+  print(Fore.GREEN + f'[+] Etsy | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] Etsy | Username is not available | https://www.etsy.com/fr/shop/{username}')
+  print(Fore.RED + f'[-] Etsy | {username} | is not available | https://www.etsy.com/fr/shop/{username}')
 
 
 if soundcloud(username):
-  print(Fore.GREEN + '[+] Soundcloud | Username is available.')
+  print(Fore.GREEN + f'[+] Soundcloud | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] Soundcloud | Username is not available | https://soundcloud.com/{username}')
+  print(Fore.RED + f'[-] Soundcloud | {username} | is not available | https://soundcloud.com/{username}')
 
 if xvid(username):
-  print(Fore.GREEN + '[+] xvideos | Username is available.')
+  print(Fore.GREEN + f'[+] xvideos | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] xvideos | Username is not available | https://www.xvideos.com/channels/{username}')
+  print(Fore.RED + f'[-] xvideos | {username} | is not available | https://www.xvideos.com/channels/{username}')
 
 if dailymotion(username):
-  print(Fore.GREEN + '[+] Dailymotion | Username is available.')
+  print(Fore.GREEN + f'[+] Dailymotion | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] Dailymotion | Username is not available | https://www.dailymotion.com/{username}')
+  print(Fore.RED + f'[-] Dailymotion | {username} | is not available | https://www.dailymotion.com/{username}')
 
 if Itchio(username):
-  print(Fore.GREEN + '[+] Itch.io | Username is available.')
+  print(Fore.GREEN + f'[+] Itch.io | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] Itch.io | Username is not available | https://itch.io/profile/{username}')
+  print(Fore.RED + f'[-] Itch.io | {username} | is not available | https://itch.io/profile/{username}')
 
 if amino(username):
-  print(Fore.GREEN + '[+] Amino | Username is available.')
+  print(Fore.GREEN + f'[+] Amino | {username} | is available.')
 else:
-  print(Fore.RED + f'[-] Amino | Username is not available | https://aminoapps.com/u/{username}')
+  print(Fore.RED + f'[-] Amino | {username} | is not available | https://aminoapps.com/u/{username}')
 
 if patreon(username):
-    print(Fore.GREEN + "[+] Patreon | Username is available.")
+    print(Fore.GREEN + f"[+] Patreon | {username} | is available.")
 else:
-    print(Fore.RED + f"[-] Patreon | Username is not available | https://www.patreon.com/{username}")
+    print(Fore.RED + f"[-] Patreon | {username} | is not available | https://www.patreon.com/{username}")
 
 vimeo = check_vimeo_username(username)
 
 if vimeo:
-  print(Fore.GREEN + f"[+] Vimeo | {username} is available.")
+  print(Fore.GREEN + f"[+] Vimeo | {username} | is available.")
 else:
-  print(Fore.RED + f"[-] Vimeo | {username} is not available. | https://vimeo.com/{username}")
+  print(Fore.RED + f"[-] Vimeo | {username} | is not available. | https://vimeo.com/{username}")
 
 
 if flickr(username):
-  print(Fore.GREEN + f"[+] Flickr | {username} is avaible.")
+  print(Fore.GREEN + f"[+] Flickr | {username} | is avaible.")
 else:
-  print(Fore.RED + f"[-] flickr | {username} is not avaible. | https://www.flickr.com/photos/{username}")
+  print(Fore.RED + f"[-] flickr | {username} | is not avaible. | https://www.flickr.com/photos/{username}")
 
 if is_minecraft_username_available(username):
-  print(Fore.GREEN + f"[+] Minecraft | {username} is avaible.")
+  print(Fore.GREEN + f"[+] Minecraft | {username} | is avaible.")
 else:
-  print(Fore.RED + f"[-] Minecraft | {username} is not avaible. | https://namemc.com/profile/{username}")
+  print(Fore.RED + f"[-] Minecraft | {username} | is not avaible. | https://namemc.com/profile/{username}")
 
 if check_github_username_availability(username):
-  print(Fore.GREEN + f'[+] Github | {username} is available')
+  print(Fore.GREEN + f'[+] Github | {username} | is available')
 else:
-  print(Fore.RED + f'[-] Github | {username} is not available. | https://github.com/{username}')
+  print(Fore.RED + f'[-] Github | {username} | is not available. | https://github.com/{username}')
 
 if check_speedrun_username_availability(username):
-  print(Fore.GREEN + f'[+] Speedrun.com | {username} is available')
+  print(Fore.GREEN + f'[+] Speedrun.com {username} | is available')
 else:
-  print(Fore.RED + f'[-] Speedrun.com | {username} is not available.| https://www.speedrun.com/user/{username}')
+  print(Fore.RED + f'[-] Speedrun.com | {username} | is not available.| https://www.speedrun.com/user/{username}')
 
 
 input('press enter to quit\n')
