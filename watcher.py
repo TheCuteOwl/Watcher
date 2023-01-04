@@ -4,9 +4,16 @@ from colorama import Fore, Back, Style
 init()
 import argparse
 
+# Création de l'analyseur d'arguments
 parser = argparse.ArgumentParser()
+
+# Ajout d'un argument nommé "username" à l'analyseur
 parser.add_argument("username", help="Le pseudo Minecraft à vérifier")
+
+# Analyse des arguments
 args = parser.parse_args()
+
+# Récupération de la valeur de l'argument "username"
 username = args.username
 
 if username is None:
@@ -49,6 +56,9 @@ def is_minecraft_username_available(username):
     return False
 
 
+
+
+
 def check_instagram(username):
     url = f"https://www.instagram.com/{username}/"
     r = requests.get(url)
@@ -58,17 +68,6 @@ def check_instagram(username):
       return False
     else:
       return False
-
-def check_username_available(username):
-    url = f"https://api.roblox.com/users/get-by-username?username={username}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return False
-    elif response.status_code == 404:
-        return True
-    else:
-        # Some other error occurred
-        raise Exception("An error occurred while checking the availability of the username")
 
 def twitter(username):
   url = f"https://twitter.com/users/username_available?username={username}"
@@ -101,14 +100,63 @@ def check_vimeo_username(username):
   else:
     return False
 
+
+def patreon(username):
+    url = f"https://www.patreon.com/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def amino(username):
+    url = f"https://aminoapps.com/u/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def Itchio(username):
+    url = f"https://itch.io/profile/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+def dailymotion(username):
+    url = f"https://www.dailymotion.com/{username}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
+
+
+if dailymotion(username):
+  print(Fore.GREEN + '[+] Dailymotion | Username is available.')
+else:
+  print(Fore.RED + f'[-] Dailymotion | Username is not available | https://www.dailymotion.com/{username}')
+
+
+if Itchio(username):
+  print(Fore.GREEN + '[+] Itch.io | Username is available.')
+else:
+  print(Fore.RED + f'[-] Itch.io | Username is not available | https://itch.io/profile/{username}')
+
+if amino(username):
+  print(Fore.GREEN + '[+] Amino | Username is available.')
+else:
+  print(Fore.RED + f'[-] Amino | Username is not available | https://aminoapps.com/u/{username}')
+
+if patreon(username):
+    print(Fore.GREEN + "[+] Patreon | Username is available.")
+else:
+    print(Fore.RED + f"[-] Patreon | Username is not available | https://www.patreon.com/{username}")
+
 vimeo = check_vimeo_username(username)
-
-
 
 if vimeo:
   print(Fore.GREEN + f"[+] Vimeo | '{username}' is available.")
 else:
-  print(f"[-] Vimeo | '{username}' is not available. | https://vimeo.com/{username}")
+  print(Fore.RED + f"[-] Vimeo | '{username}' is not available. | https://vimeo.com/{username}")
 
 
 if flickr(username):
@@ -131,11 +179,6 @@ if check_speedrun_username_availability(username):
   print(Fore.GREEN + f'[+] Speedrun.com | {username} is available')
 else:
   print(Fore.RED + f'[-] Speedrun.com | {username} is not available.| https://www.speedrun.com/user/{username}')
-
-if check_username_available(username):
-    print(Fore.GREEN + f"[+] Roblox | {username} is available")
-else:
-    print(Fore.RED + f"[-] Roblox | {username} is not available | https://api.roblox.com/users/get-by-username?username={username}")
 
 
 input('press enter to quit\n')
