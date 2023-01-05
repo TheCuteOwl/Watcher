@@ -192,8 +192,18 @@ def Snapchat(username):
         return False
     return True
 
+def Dribbble(username):
+    url = f"https://dribbble.com/{username}/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return False
+    return True
 
-  
+if Dribbble(username):
+  print(Fore.GREEN + f'[+] Dribbble | {username} | is available.')
+else:
+  print(Fore.RED + f'[-] Dribble | {username} | is not available | https://dribbble.com/{username}/')
+
 if Snapchat(username):
   print(Fore.GREEN + f'[+] Snapchat | {username} | is available.')
 else:
@@ -204,35 +214,42 @@ if Scratch(username):
 else:
   print(Fore.RED + f'[-] Scratch | {username} | is not available | https://scratch.mit.edu/users/{username}')
 
+
 if Gog(username):
   print(Fore.GREEN + f'[+] Gog | {username} | is available.')
 else:
   print(Fore.RED + f'[-] Gog | {username} | is not available | https://www.gog.com/u/{username}')
+
 
 if Slack(username):
   print(Fore.GREEN + f'[+] Slack | {username} | is available.')
 else:
   print(Fore.RED + f'[-] Slack | {username} | is not available | https://{username}.slack.com/')
 
+
 if spotify(username):
   print(Fore.GREEN + f'[+] Spotify | {username} | is available.')
 else:
   print(Fore.RED + f'[-] Spotify | {username} | is not available | https://open.spotify.com/user/{username}')
+
 
 if behance(username):
   print(Fore.GREEN + f'[+] Behance | {username} | is available.')
 else:
   print(Fore.RED + f'[-] Behance | {username} | is not available | https://www.behance.net/{username}')
 
+
 if deviantart(username):
   print(Fore.GREEN + f'[+] DeviantArt | {username} | is available.')
 else:
   print(Fore.RED + f'[-] DeviantArt | {username} | is not available | https://www.deviantart.com/{username}')
 
+
 if etsy(username):
   print(Fore.GREEN + f'[+] Etsy | {username} | is available.')
 else:
   print(Fore.RED + f'[-] Etsy | {username} | is not available | https://www.etsy.com/fr/shop/{username}')
+
 
 if soundcloud(username):
   print(Fore.GREEN + f'[+] Soundcloud | {username} | is available.')
@@ -270,6 +287,7 @@ if vimeo:
   print(Fore.GREEN + f"[+] Vimeo | {username} | is available.")
 else:
   print(Fore.RED + f"[-] Vimeo | {username} | is not available. | https://vimeo.com/{username}")
+
 
 if flickr(username):
   print(Fore.GREEN + f"[+] Flickr | {username} | is avaible.")
