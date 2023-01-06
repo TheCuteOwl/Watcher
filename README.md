@@ -4,6 +4,7 @@
 
 
 IT WILL BE UPDATED AT LEAST 1 TIME A DAY
+NOW EVERY UPDATE WILL ADD 15 OR 10 WEBSITE
 ---
 * Here is a way to find if a username is avaible ;)
 
